@@ -1,0 +1,80 @@
+{
+    "clangd.path": "clangd",
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=.build-2.6.24",
+        "-j=4",
+        // "--query-driver=/usr/bin/clang++",
+        // "--clang-tidy",
+        // "--clang-tidy-checks=performance-*,bugprone-*",
+        // 全局补全（会自动补充头文件）
+        "--all-scopes-completion",
+        // 更详细的补全内容
+        "--completion-style=detailed",
+        // 补充头文件的形式
+        "--header-insertion=iwyu",
+        // pch优化的位置
+        "--pch-storage=disk"
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "parameter": "#306b72",
+            "class": {
+                "fontStyle": "bold",
+                "foreground": "#729de3"
+            },
+            "function": {
+                "foreground": "#e5b124"
+            },
+            "variable": "#26cdca",
+            "enum": "#397797",
+            "enumMember": "#397797",
+            "macro": {
+                "foreground": "#8f5daf",
+                "fontStyle": "bold"
+            },
+            "method": {
+                "foreground": "#e5b124",
+                "fontStyle": "underline"
+            },
+            "comment": "#505050",
+            "namespace": {
+                "foreground": "#00d780",
+                "fontStyle": "bold"
+            },
+            "*.readonly": {
+                "fontStyle": "bold"
+            },
+            "variable.readonly": {
+                "foreground": "#8f5daf",
+                "fontStyle": "bold"
+            },
+            "*.static": {
+                "fontStyle": "italic"
+            },
+            "property": {
+                "foreground": "#7ca6b7",
+                "fontStyle": "underline"
+            }
+        }
+    },
+    "files.exclude": {
+        "arch/[a-j]*": true,
+        "arch/[l-w]*": true,
+        "arch/xte*": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".vscode/.cache": true,
+        ".idea": true,
+        "cmake-build-debug-wsl": true
+    },
+    // 函数参数名提示
+    "editor.inlayHints.enabled": "off",
+    "editor.formatOnSave": false,
+}
