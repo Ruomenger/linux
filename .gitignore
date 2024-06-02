@@ -17,6 +17,7 @@
 *.i
 *.lst
 *.symtypes
+build/
 
 #
 # Top-level generic files

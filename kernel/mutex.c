@@ -95,7 +95,7 @@ void inline fastcall __sched mutex_lock(struct mutex *lock)
 EXPORT_SYMBOL(mutex_lock);
 #endif
 
-static void fastcall noinline __sched
+static __used void fastcall noinline __sched
 __mutex_unlock_slowpath(atomic_t *lock_count);
 
 /***
@@ -294,7 +294,7 @@ int fastcall __sched mutex_lock_interruptible(struct mutex *lock)
 
 EXPORT_SYMBOL(mutex_lock_interruptible);
 
-static void fastcall noinline __sched
+static __used void fastcall noinline __sched
 __mutex_lock_slowpath(atomic_t *lock_count)
 {
 	struct mutex *lock = container_of(lock_count, struct mutex, count);
